@@ -5,15 +5,18 @@ RUN git clone https://github.com/tnalpgge/rank-amateur-cowsay && \
     cd rank-amateur-cowsay && \
     ./install.sh /usr/
 
-FROM ghcr.io/svuctf/base/xinetd:alpine
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
-    apk add -U perl --no-cache
+FROM python:alpine
+
+ENV FLASK_APP=app FLASK_ENV=production FLASK_ENV_DEBUG=False
+
+RUN pip install flask gunicorn --no-cache-dir && \
+    sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
+    apk add -U --no-cache perl
 
 COPY --from=builder /usr/bin/cowsay /usr/bin/
 COPY --from=builder /usr/share/cows /usr/share/cows
 
 COPY --chmod=500 init.sh /init.sh
-COPY --chmod=544 challenge.sh /challenge.sh
-COPY xinetd.conf /etc/xinetd.conf
+COPY ./app /app
 
-CMD ["xinetd", "-dontfork"]
+CMD ["/init.sh"]

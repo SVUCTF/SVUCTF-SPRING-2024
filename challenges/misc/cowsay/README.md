@@ -9,44 +9,27 @@
 
 ## 题目描述
 
-```bash
-#!/bin/sh
-echo -n "Input cowfile:"
-read cowfile
-echo -n "Input message:"
-read message
-/usr/bin/cowsay -f $cowfile $message
-exit 0
-```
+网页结果中的命令行仅供参考和测试，后端执行命令代码如下：
 
-使用 NetCat 连接并进行手动交互：
+```python
+cowfile = request.form["cowfile"]
+input = request.form["input"]
+arg = request.form["arg"]
 
-```
-$ nc ip port
-Input cowfile:default
-Input message:hello ctfer
- _____________
-< hello ctfer >
- -------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-```
+p = subprocess.Popen(
+    ["/usr/bin/cowsay", "-f", cowfile, arg],
+    stdin=subprocess.PIPE,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT,
+)
+stdout, _ = p.communicate(input=input.encode())
 
-或：
-
-```
-$ echo -e "default\nhello ctfer" | nc ip port
- _____________
-< hello ctfer >
- -------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
+command_line = '$ echo -n -e "{input}" | cowsay -f {cowfile} "{arg}"'.format(
+    input=codecs.escape_encode(input.encode())[0].decode(),
+    cowfile=cowfile,
+    arg=arg,
+)
+result = f"{command_line}\n{stdout.decode()}"
 ```
 
 > Hint: 本题 cowsay 版本为[仓库](https://github.com/tnalpgge/rank-amateur-cowsay)最新，对应 `cowsay-3.04` 。
