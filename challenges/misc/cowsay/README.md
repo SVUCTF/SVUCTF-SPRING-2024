@@ -11,8 +11,10 @@
 
 ```bash
 #!/bin/sh
-read -p "Input cowfile:" cowfile
-read -p "Input message:" message
+echo -n "Input cowfile:"
+read cowfile
+echo -n "Input message:"
+read message
 /usr/bin/cowsay -f $cowfile $message
 exit 0
 ```
