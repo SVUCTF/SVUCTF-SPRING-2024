@@ -10,7 +10,7 @@
 ## 题目描述
 
 ```
-#!/bin/env bash
+#!/bin/sh
 
 read -p "Enter the name of the cowfile (e.g., default, sheep, dragon):" cowfile
 read -p "Enter the message:" message
