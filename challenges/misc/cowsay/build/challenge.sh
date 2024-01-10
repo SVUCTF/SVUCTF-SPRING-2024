@@ -1,13 +1,8 @@
-#!/bin/sh
+#!/bin/env bash
 
-echo "Enter the name of the cowfile (e.g., default, sheep, dragon):"
-read cowfile
+read -p "Enter the name of the cowfile (e.g., default, sheep, dragon):" cowfile
+read -p "Enter the message:" message
 
-echo "Enter a single-line message (press CTRL+D to skip):"
-read message
+/usr/bin/cowsay -f $cowfile $message
 
-echo "Enter a multiline message (press CTRL+D to finish):"
-message_multiline=$(</dev/stdin)
-echo "$message_multiline" | /usr/bin/cowsay -f $cowfile $message
-
-exit 0
+read -p "Press any key to exit..."
