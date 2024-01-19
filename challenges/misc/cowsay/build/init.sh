@@ -6,4 +6,4 @@ chmod 444 /flag
 
 unset GZCTF_FLAG
 
-ttyd -W /challenge.sh
+/usr/sbin/sshd -D
