@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>帕鲁问答</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="index.js"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row vh-100 align-items-center">
+            <div class="col col-md-8 mx-auto">
+                <div class="text-center my-4">
+                    <h1 class="mb-4">帕鲁问答</h1>
+                    <div id="resultAlert" role="alert" class="alert alert-secondary" hidden></div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>1. </span>
+                                工作室所在教学楼第六层最靠近厕所的教室中，后排靠窗座位的抽屉里放了什么颜色的笔？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：指占外壳面积最大的颜色，格式为十六进制颜色码，如 #EE22FF</small>
+                            <div class="my-2"><input type="text" id="q1" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>2. </span>
+                                在国际编程语言标准化组织的一个加密的电子邮件中，关于下一代编程语言的提案中提到的新关键字的 ASCII 码值的乘积是多少？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：正整数，如 67890</small>
+                            <div class="my-2"><input type="text" id="q2" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>3. </span>
+                                一个网络安全论坛上，有人提到了一个开发中的 Metasploit
+                                模块，该模块可以分析防御人员的注意力（通过睡眠时间等）自适应调整攻击载荷，以此规避攻击溯源。这个模块的开发代号是什么？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：英文小写字母和下划线组成</small>
+                            <div class="my-2"><input type="text" id="q3" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>4. </span>
+                                RFC 81024 定义了一种通过思维直接交流的网络协议。这种协议允许传输的最大思维复杂度是多少比特
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：使用数字表示，如 1024</small>
+                            <div class="my-2"><input type="text" id="q4" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>5. </span>
+                                在一款名为 SuperT 的编程语言中，有一种被称为“时间倒流操作符”的新特性，它允许代码在执行时向过去传递信息。这个操作符的符号是什么？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：使用字符表示，例如 "&lt;--"</small>
+                            <div class="my-2"><input type="text" id="q5" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>6. </span>
+                                有个 Linux 版本的开发者为了纪念他的宠物猫，在 cat 命令中加入了一个彩蛋，使得在特定的文件上使用时，会额外输出他猫的名字。这个彩蛋的触发条件是什么？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：填写触发所需的特殊文件名</small>
+                            <div class="my-2"><input type="text" id="q6" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>7. </span>
+                                去年九月，一个划时代的编程语言公布了基本原型，它只有一个关键字 auto，编译器可以自行理解编程人员的意图。请问作者的英文名是？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：不需要包括姓氏</small>
+                            <div class="my-2"><input type="text" id="q7" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>8. </span>
+                                在 Windows 的一个愚人节特别版更新中，微软添加了一个补丁，该补丁会随机将鼠标指针变成各种搞笑图案。这个补丁的版本号是什么？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：如 KB4012212</small>
+                            <div class="my-2"><input type="text" id="q8" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>9. </span>
+                                在一次高科技展览会上，一个咖啡机品牌展示了他们的最新型号，这款咖啡机不仅可以通过分析用户的心情来调整咖啡的浓度和口味，还声称能通过特殊的泡沫艺术在咖啡表面展示用户当天最需要的励志语句。这款咖啡机的型号名称是什么？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：格式为 &lt;name&gt;-&lt;version&gt;，如 InspiroBrew-10</small>
+                            <div class="my-2"><input type="text" id="q9" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4 text-start card">
+                        <div class="card-body">
+                            <p class="mb-0 card-text">
+                                <span>10. </span>
+                                如何在幻兽帕鲁中最快孵出四金词条异构格里芬？
+                                <b>（10 分）</b>
+                            </p>
+                            <small class="text-muted">提示：这个还真有答案？</small>
+                            <div class="my-2"><input type="text" id="q10" name="" class="form-control"></div>
+                        </div>
+                    </div>
+                    <button onclick="return checkAnswers()" class="btn btn-primary btn-lg btn-block w-100">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
