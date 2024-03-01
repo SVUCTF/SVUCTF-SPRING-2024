@@ -1,5 +1,6 @@
 import re
 import os
+import time
 from openai import OpenAI
 from flask import Flask, request, render_template, render_template_string
 
@@ -25,11 +26,19 @@ Note, only reply with a single letter, H or S, without any explanation or extra 
 """
 client = OpenAI(base_url=base_url, api_key=api_key)
 pattern = re.compile("[^\x20-\x7F \r\n]")
+last_request_time = None
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
+        global last_request_time
+
+        now = time.time()
+        if last_request_time and now - last_request_time < 30:
+            return "Too many requests. Please wait 30 seconds before trying again.", 429
+        last_request_time = now
+
         template = request.form.get("template", "")
 
         if pattern.match(template):
