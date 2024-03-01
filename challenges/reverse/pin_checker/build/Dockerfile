@@ -1,7 +1,12 @@
 FROM i386/ubuntu:bionic AS builder
 FROM ghcr.io/svuctf/base-v2/xinetd:latest
 
-RUN chown -R ctf:ctf /home/ctf && \
+COPY init.sh /init.sh
+COPY xinetd.conf /etc/xinetd.conf
+COPY --chown=ctf:ctf --chmod=500 pin_checker /home/ctf/pin_checker
+
+RUN chmod +x /init.sh && \
+    chown -R ctf:ctf /home/ctf && \
     chmod -R 750 /home/ctf && \
     cp -R /lib* /home/ctf && \
     mkdir /home/ctf/lib64  && \
@@ -23,8 +28,5 @@ RUN chown -R ctf:ctf /home/ctf && \
 COPY --from=builder /lib/i386-linux-gnu/libc.so.6 /home/ctf/lib/i386-linux-gnu/
 COPY --from=builder /lib/i386-linux-gnu/libm.so.6 /home/ctf/lib/i386-linux-gnu/
 COPY --from=builder /lib/ld-linux.so.2 /home/ctf/lib/
-
-COPY xinetd.conf /etc/xinetd.conf
-COPY --chown=ctf:ctf --chmod=500 pin_checker /home/ctf/pin_checker
 
 CMD ["xinetd", "-dontfork"]
