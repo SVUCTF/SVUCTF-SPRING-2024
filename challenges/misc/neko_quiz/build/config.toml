@@ -1,6 +1,12 @@
 title = "猫咪问答"
 
 [[questions]]
+text = "想要在苏州图书馆借阅 <i>Engineering a Compiler</i>，需要到哪个分馆的哪个馆藏地点？"
+points = 20
+hint = "格式：所在分馆-所在馆藏地点，例如 中心馆-西文书库。（如有多个，任意一个即可）"
+answer = ["苏图-北馆书库", "苏图-设计图书馆"]
+
+[[questions]]
 text = """「你们这些搞计算机的，就是喜欢卖弄学问，数个数还得从零开始」。
 其实编号从零开始是有道理的，一位计算机科学家还专门写过一篇简短的<b>手写稿</b>来解释，
 请问这个手写稿的编写日期是？
@@ -23,16 +29,10 @@ answer = ["80"]
 
 [[questions]]
 text = """在某次在线学术会议上，展示了一种通过声学侧信道推断 VoIP 呼叫来源的攻击手段，
-请问演讲时的日期是？"""
+请问这个会议的名称是？"""
 points = 20
-hint = "格式：YYYY-MM-DD ，如 2024-02-05"
-answer = ["2021-06-30"]
-
-[[questions]]
-text = "世界上最大的最小 PNG 图片，在维持 67 字节的同时做到了 2064 像素那么宽，它 IHDR 块的 CRC 值是？"
-points = 20
-hint = "格式：十六进制，无前缀，以空格分割，如 FF FF FF FF"
-answer = ["45 C1 F2 B7"]
+hint = "格式：会议名称 + 年份，以空格分割，如 ECOOP 2024"
+answer = ["ACM WiSec 2021", "WiSec 2021"]
 
 [flag]
 flag_env = "GZCTF_FLAG"
