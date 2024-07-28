@@ -252,7 +252,7 @@ Perl version: 5.038002
 
 > 注意：在命令行参数中传入消息内容更方便（此题也是这样），不然要按两次 CTRL-D，分别结束消息输入和 Perl 代码输入。
 
-使用 `/dev/stdin` 作为 `cowfile` 路径，输入 `print `cat /flag`;`，按下 CTRL-D 结束输入，执行代码获得 Flag：
+使用 `/dev/stdin` 作为 `cowfile` 路径，输入 `` print `cat /flag`; ``，按下 CTRL-D 结束输入，执行代码获得 Flag：
 
 ```
 Enter the name of the cowfile (e.g., default, sheep, dragon):/dev/stdin
