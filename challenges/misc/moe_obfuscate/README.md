@@ -214,7 +214,7 @@ in(B),t=c*h*g-f*        e;int x=40+30*D*
              ..,--------,*/
 ```
 
-<video autoplay loop muted>
+<video width="2284" height="1518" autoplay loop muted>
   <source src="writeups/donut.webm" type="video/webm">
 Your browser does not support the video tag.
 </video>
