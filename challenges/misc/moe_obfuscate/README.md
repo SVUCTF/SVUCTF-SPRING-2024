@@ -188,7 +188,7 @@ IOCCC 是国际 C 代码混淆大赛，旨在使用各种技巧混淆 C 语言�
 
 https://www.a1k0n.net/2006/09/15/obfuscated-c-donut.html
 
-甜甜圈形状的代码，可以打印出 3D 旋转的甜甜圈。
+甜甜圈形状的代码，编译运行可以打印出 3D 旋转的甜甜圈。
 
 ```c
              k;double sin()
@@ -214,16 +214,11 @@ in(B),t=c*h*g-f*        e;int x=40+30*D*
              ..,--------,*/
 ```
 
-<video width="2284" height="1518" autoplay loop muted>
-  <source src="writeups/donut.webm" type="video/webm">
-Your browser does not support the video tag.
-</video>
-
 #### AKARI
 
 http://uguu.org/src_akari_c.html
 
-`akari` 是一个图像采样工具，可以接受 PGM、PPM、ASCII art 的输入输出格式。
+`akari` 是一个图像采样工具。
 
 ```
                                        /*
