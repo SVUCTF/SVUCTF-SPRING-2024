@@ -26,7 +26,8 @@ Powered by GZCTF and GZTIME
     - [Web](#Web)
     - [PPC](#PPC)
 - [难度与分值](#%E9%9A%BE%E5%BA%A6%E4%B8%8E%E5%88%86%E5%80%BC)
-- [往届比赛](#%E5%BE%80%E5%B1%8A%E6%AF%94%E8%B5%9B) [致谢](#%E8%87%B4%E8%B0%A2)
+- [往届比赛](#%E5%BE%80%E5%B1%8A%E6%AF%94%E8%B5%9B)
+- [致谢](#%E8%87%B4%E8%B0%A2)
 
 项目结构遵循 GZCTF 规范。
 
