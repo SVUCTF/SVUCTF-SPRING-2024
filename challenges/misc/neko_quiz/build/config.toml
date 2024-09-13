@@ -1,43 +1,41 @@
+[general]
 title = "猫咪问答"
+return_score = false
 
 [[questions]]
 text = "想要在苏州图书馆借阅 <i>Engineering a Compiler</i>，需要到哪个分馆的哪个馆藏地点？"
 points = 20
 hint = "格式：所在分馆-所在馆藏地点，例如 中心馆-西文书库。（如有多个，任意一个即可）"
-answer = ["苏图-北馆书库", "苏图-设计图书馆"]
+answers = ["苏图-北馆书库", "苏图-设计图书馆"]
 
 [[questions]]
-text = """「你们这些搞计算机的，就是喜欢卖弄学问，数个数还得从零开始」。
-其实编号从零开始是有道理的，一位计算机科学家还专门写过一篇简短的<b>手写稿</b>来解释，
-请问这个手写稿的编写日期是？
-"""
+text = "「你们这些搞计算机的，就是喜欢卖弄学问，数个数还得从零开始」。其实编号从零开始是有道理的，一位计算机科学家还专门写过一篇简短的<b>手写稿</b>来解释，请问这个手写稿的编写日期是？"
 points = 20
 hint = "格式：YYYY-MM-DD ，如 2024-02-05"
-answer = ["1982-08-11"]
+answers = ["1982-08-11"]
 
 [[questions]]
 text = "CVE-2023-45853 的修复补丁中，文件名长度被限制为多少位 (bit)？"
 points = 20
 hint = "格式：整数，如 32"
-answer = ["16"]
+answers = ["16"]
 
 [[questions]]
 text = "Hare 编程语言的官方风格指南中，行宽被限制为多少列？"
 points = 20
 hint = "格式：整数，如 120"
-answer = ["80"]
+answers = ["80"]
 
 [[questions]]
-text = """在某次在线学术会议上，展示了一种通过声学侧信道推断 VoIP 呼叫来源的攻击手段，
-请问这个会议的名称是？"""
+text = "在某次在线学术会议上，展示了一种通过声学侧信道推断 VoIP 呼叫来源的攻击手段，请问这个会议的名称是？"
 points = 20
 hint = "格式：会议名称 + 年份，以空格分割，如 ECOOP 2024"
-answer = ["ACM WiSec 2021", "WiSec 2021"]
+answers = ["ACM WiSec 2021", "WiSec 2021"]
 
 [flag]
-flag_env = "GZCTF_FLAG"
-flag_file = "/flag"
-flag_static = "flag{neko_quiz_static_flag}"
+env = "GZCTF_FLAG"
+file = "/flag"
+static_str = "flag{neko_quiz_static_flag}"
 
 [message]
 incorrect = "没有全部答对，不能给你 FLAG 哦。"

@@ -1,8 +1,3 @@
-FROM scratch
+FROM ghcr.io/13m0n4de/neko-quiz:latest
 
-COPY server /server
-COPY config.toml /config.toml
-COPY dist/ /dist/
-
-ENTRYPOINT ["/server"]
-CMD ["-a", "0.0.0.0"]
+COPY config.toml config.toml
